@@ -76,12 +76,23 @@ class RestaurantServiceTest {
 
     //>>>>>>>>>>>>>>>>>>>>>>PLACING ORDER<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
     @Test
-    public void placing_order_for_item_that_exist(){
+    public void placing_order_for_item_that_exist() throws itemNotFoundException {
         restaurant.addToMenu("Sweet corn soup",119);
         restaurant.addToMenu("Vegetable lasagne", 269);
         restaurant.addToMenu("Sizzling brownie",319);
 
         restaurant.selectItem("Sizzling brownie");
+        assertEquals(319,restaurant.getTotalSpending());
+
+    }
+
+    @Test
+    public void placing_order_for_item_that_does_not_exist() throws itemNotFoundException {
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        restaurant.addToMenu("Sizzling brownie",319);
+
+        restaurant.selectItem("Hyderabd Biryani");
         assertEquals(319,restaurant.getTotalSpending());
 
     }

@@ -76,10 +76,14 @@ public class Restaurant {
         return name;
     }
 
-    public void selectItem(String itemName) {
+    public void selectItem(String itemName) throws itemNotFoundException{
         Item item = findItemByName(itemName);
-
+        if (item == null)
+            throw new itemNotFoundException(itemName);
+        else
+            totalSpending = totalSpending + item.getPrice();
     }
+
     public double getTotalSpending(){
         return totalSpending;
     }
