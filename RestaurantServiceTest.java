@@ -72,4 +72,18 @@ class RestaurantServiceTest {
         assertEquals(initialNumberOfRestaurants + 1,service.getRestaurants().size());
     }
     //<<<<<<<<<<<<<<<<<<<<ADMIN: ADDING & REMOVING RESTAURANTS>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+    //>>>>>>>>>>>>>>>>>>>>>>PLACING ORDER<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+    @Test
+    public void placing_order_for_item_that_exist(){
+        restaurant.addToMenu("Sweet corn soup",119);
+        restaurant.addToMenu("Vegetable lasagne", 269);
+        restaurant.addToMenu("Sizzling brownie",319);
+
+        restaurant.selectItem("Sizzling brownie");
+        assertEquals(319,restaurant.getTotalSpending());
+
+    }
+    //<<<<<<<<<<<<<<<<<<<<<<<<<<PLACING ORDER>>>>>>>>>>>>>>>>>>>>>>
 }

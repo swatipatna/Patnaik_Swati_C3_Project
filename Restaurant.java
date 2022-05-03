@@ -6,6 +6,7 @@ import java.util.List;
 public class Restaurant {
     private String name;
     private String location;
+    private int totalSpending = 0;      // TDD
     public LocalTime openingTime;
     public LocalTime closingTime;
 
@@ -73,6 +74,14 @@ public class Restaurant {
 
     public String getName() {
         return name;
+    }
+
+    public void selectItem(String itemName) {
+        Item item = findItemByName(itemName);
+
+    }
+    public double getTotalSpending(){
+        return totalSpending;
     }
 
 }

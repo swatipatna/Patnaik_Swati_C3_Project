@@ -62,5 +62,7 @@ class RestaurantTest {
         assertThrows(itemNotFoundException.class,
                 ()->restaurant.removeFromMenu("French fries"));
     }
+
+    // Total Spending on Items
     //<<<<<<<<<<<<<<<<<<<<<<<MENU>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 }
